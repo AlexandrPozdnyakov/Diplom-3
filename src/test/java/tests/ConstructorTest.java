@@ -72,9 +72,11 @@ public class ConstructorTest {
     public  void  GoBunTabTest(){
         MainPageBurger mainPage = page(MainPageBurger.class);
         mainPage.clickToppings();
+        boolean isTopping = mainPage.checkTopTopping();
+        assertTrue("Вкладка начинок не активна", isTopping);
         mainPage.clickBuns();
         boolean isBun = mainPage.checkTopBun();
-        assertTrue("Булки нет!", isBun);
+        assertTrue("Вкладка булок не активна", isBun);
 
     }
 }

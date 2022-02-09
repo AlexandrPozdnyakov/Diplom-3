@@ -13,7 +13,7 @@ public class LoginPage {
     private SelenideElement emailField;
 
     //поле мейла активное
-    @FindBy(how = How.XPATH,using = "//*[@id=\"root\"]/div/main/div/form/fieldset[1]/div/div/input")
+    @FindBy(how = How.CSS,using = "fieldset:nth-child(1) input")
     private SelenideElement emailActField;
 
     //поле мейла для ввода
@@ -21,7 +21,7 @@ public class LoginPage {
     private SelenideElement emailInput;
 
     //поле пароля для ввода
-    @FindBy(how = How.XPATH,using = "//*[@id=\"root\"]/div/main/div/form/fieldset[2]/div/div/input")
+    @FindBy(how = How.CSS,using = "fieldset:nth-child(2) input")
     private SelenideElement passwordInput;
 
     //кнопка Войти
@@ -49,7 +49,7 @@ public class LoginPage {
     private SelenideElement orderTape;
 
     //Переход к конструктору через бургер
-    @FindBy(how = How.XPATH,using = "//div[@class='AppHeader_header__logo__2D0X2']//a//*[name()='svg']")
+    @FindBy(how = How.XPATH,using = "//div[@class='//*[name()='svg']")
     private SelenideElement logoBurger;
 
 
@@ -72,8 +72,6 @@ public class LoginPage {
 
     @Step
     public boolean checkEntrance() {
-        if (entranceButton.isDisplayed());
-        return true;
-
+        return entranceButton.shouldBe(Condition.exist).isDisplayed();
     }
 }

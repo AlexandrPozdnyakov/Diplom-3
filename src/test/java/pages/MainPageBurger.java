@@ -59,6 +59,9 @@ public class MainPageBurger {
     @FindBy(how = How.XPATH,using = "//div[@class='Modal_modal__contentBox__sCy8X pt-30 pb-30']")
     private SelenideElement close;
 
+    @FindBy(how = How.CSS,using = ".tab_tab_type_current__2BEPc")
+    public SelenideElement activeTab;
+
 
     //Проверка, что после логина есть кнопка Оформить заказ
     @Step
@@ -91,9 +94,7 @@ public class MainPageBurger {
 
     @Step
     public boolean checkTopBun() {
-        fluorBun.shouldBe(Condition.exist);
-        if (fluorBun.isDisplayed());
-        return true;
+        return activeTab.getText().contentEquals("Булки");
     }
 
     @Step
@@ -103,8 +104,7 @@ public class MainPageBurger {
 
     @Step
     public boolean checkTopSauce() {
-        if (sauce.isDisplayed());
-        return true;
+        return activeTab.getText().contentEquals("Соусы");
     }
 
     @Step
@@ -114,7 +114,6 @@ public class MainPageBurger {
 
     @Step
     public boolean checkTopTopping() {
-        if (toppings.isDisplayed());
-        return true;
+        return activeTab.getText().contentEquals("Начинки");
     }
 }

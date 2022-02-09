@@ -13,7 +13,7 @@ public class RegisterPage {
     private SelenideElement nameField;
 
     //поле ввода имени активное
-    @FindBy(how = How.XPATH,using = "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[1]/div[1]/div[1]/input[1]")
+    @FindBy(how = How.CSS,using = "fieldset:nth-child(1) input")
     private SelenideElement nameActField;
 
     //поле ввода мейла неактивное
@@ -21,7 +21,7 @@ public class RegisterPage {
     private SelenideElement mailField;
 
     //поле ввода мейла активное
-    @FindBy(how = How.CSS,using = "div[class='input pr-6 pl-6 input_type_text input_size_default input_status_active'] input[name='name']")
+    @FindBy(how = How.CSS,using = "fieldset:nth-child(2) input")
     private SelenideElement mailActivField;
 
     //поле ввода пароля неактивное
@@ -29,7 +29,7 @@ public class RegisterPage {
     private SelenideElement passField;
 
     //поле ввода пароля активное
-    @FindBy(how = How.XPATH,using = "/html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/form[1]/fieldset[3]/div[1]/div[1]/input[1]")
+    @FindBy(how = How.CSS,using = "fieldset:nth-child(3) input")
     private SelenideElement passActiveField;
 
     //ошибка ввода пароля при нажатии на кнопку регистрации
